@@ -7,60 +7,121 @@
   <link rel="shortcut icon" href="../img/logo (2).png" type="image/x-icon">
   <title>TheStyleLoop | Checkout</title>
 
+  <!-- FontAwesome & Bootstrap -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/navbarstyle.css">
   <link rel="stylesheet" href="../css/footer.css">
 </head>
+
 <body>
-  <!-- NAVBAR -->
+  <!-- ---------NAVBAR--------- -->
   <nav class="navbar">
-      <div class="logo">
-          <a href="../index.html">TheStyleLoop</a>
+    <div class="logo">
+      <a href="../index.html">TheStyleLoop</a>
+    </div>
+    <div class="menu">
+      <div class="menu-links">
+        <a href="../index.html">Home</a>
+        <a href="./shop.html">Shop</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
       </div>
-      <div class="menu">
-          <div class="menu-links">
-              <a href="../index.html">Home</a>
-              <a href="./shop.html">Shop</a>
-              <a href="./about.html">About</a>
-              <a href="./contact.html">Contact</a>
-              <a href="./blog.html">Blog</a>
-              <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
-          </div>
-          <form action="./login.html">
-              <button class="log-in">Log In</button>
-          </form>
-      </div>
-      <div class="menu-btn">
-          <i class="fa-solid fa-bars"></i>
-      </div>
+      <form action="./login.html">
+        <button class="log-in">Log In</button>
+      </form>
+    </div>
+    <div class="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </nav>
+  <!-- ------------------------ -->
 
-  <!-- CHECKOUT SECTION -->
+  <!-- -----------CHECKOUT SECTION----------- -->
   <section id="checkout" class="section-p1">
-    <h2>Checkout</h2>
-    <form id="checkout-form">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" class="form-control" placeholder="Enter your name" required>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" class="form-control" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label>Shipping Address</label>
-        <input type="text" class="form-control" placeholder="Enter your address" required>
-      </div>
-      <div class="form-group">
-        <label>Total Amount</label>
-        <input type="text" id="total-amount" class="form-control" readonly>
-      </div>
-      <button type="submit" class="btn btn-dark">Place Order</button>
-    </form>
-  </section>
+    <div class="container">
+      <h2>Checkout</h2>
+      <form id="checkoutForm">
+        <div class="row">
+          <!-- Billing Details -->
+          <div class="col-md-6">
+            <h4>Billing Details</h4>
+            <div class="form-group">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" class="form-control" placeholder="Street address" required>
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" class="form-control" placeholder="City" required>
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP / Postal Code</label>
+              <input type="text" id="zip" class="form-control" placeholder="ZIP Code" required>
+            </div>
+          </div>
 
-  <!-- FOOTER -->
+          <!-- Payment Section -->
+          <div class="col-md-6">
+            <h4>Payment Details</h4>
+            <div class="form-group">
+              <label for="cardName">Name on Card</label>
+              <input type="text" id="cardName" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" class="form-control" placeholder="1111 2222 3333 4444" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="exp">Expiry Date</label>
+                <input type="text" id="exp" class="form-control" placeholder="MM/YY" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+              </div>
+            </div>
+
+            <div class="order-summary mt-4">
+              <h4>Your Order</h4>
+              <table class="table">
+                <tr>
+                  <td>Cart Subtotal</td>
+                  <td id="subtotal">$75</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong id="total">$75</strong></td>
+                </tr>
+              </table>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block mt-3">Place Order</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- -------------------------------------- -->
+
+  <!-- ---------------FOOTER------------ -->
   <footer>
     <a href="#">TheStyleLoop</a>
     <div class="social">
@@ -73,20 +134,25 @@
     </div>
     <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
   </footer>
+  <!-- --------------------------------- -->
 
+  <!-- Hamburger Menu JS -->
   <script>
-    // Load total from cart
-    const total = localStorage.getItem("cartTotal");
-    if (total) {
-      document.getElementById("total-amount").value = "$" + total;
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.querySelector(".menu-btn");
+      const menu = document.querySelector(".menu");
+      menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 
-    // Submit form
-    document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  <!-- Simple Checkout Alert -->
+  <script>
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("✅ Thank you for your purchase! Your order has been placed.");
-      localStorage.removeItem("cartTotal");
-      window.location.href = "../index.html";
+      alert("🎉 Thank you for your order! Your payment is being processed.");
+      window.location.href = "../index.html"; // redirect after confirmation
     });
   </script>
 </body>
