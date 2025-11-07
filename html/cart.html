@@ -9,7 +9,6 @@
   <title>TheStyleLoop | Where style meets Elegance</title>
 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../css/style.css">
@@ -19,31 +18,29 @@
 
 <body>
   <!-- ---------NAVBAR--------- -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="../index.html">TheStyleLoop</a>
-            </div>
-        <div class="menu">
-            <div class="menu-links">
-                <a href="../index.html">Home</a>
-                <a href="./shop.html">Shop</a>
-                <a href="./about.html">About</a>
-                <a href="./contact.html">Contact</a>
-                <a href="./blog.html">Blog</a>
-                <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-            <form action="./login.html">
-                <button class="log-in">Log In</button>
-            </form>
-        </div>
-        <div class="menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
-  <!-- ------------------------ -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../index.html">TheStyleLoop</a>
+    </div>
+    <div class="menu">
+      <div class="menu-links">
+        <a href="../index.html">Home</a>
+        <a href="./shop.html">Shop</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+      <form action="./login.html">
+        <button class="log-in">Log In</button>
+      </form>
+    </div>
+    <div class="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
 
-
-  <!-- -----------Card----------- -->
+  <!-- -----------CART----------- -->
   <section id="cart" class="section-p1">
     <table width="100%">
       <thead>
@@ -56,39 +53,33 @@
           <td>Subtotal</td>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+      <tbody id="cart-body">
+        <tr class="cart-item" data-price="25">
+          <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
           <td><img src="../img/products/f1.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirts</td>
-          <td>$ 25</td>
-          <td><input type="number" value="1"></td>
-          <td>$ 25</td>
+          <td>Cartoon Astronaut T-Shirt</td>
+          <td>$25</td>
+          <td><input type="number" class="qty" value="1" min="1"></td>
+          <td class="subtotal">$25</td>
         </tr>
-        <tr>
-          <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+        <tr class="cart-item" data-price="25">
+          <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
           <td><img src="../img/products/f2.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirts</td>
-          <td>$ 25</td>
-          <td><input type="number" value="1"></td>
-          <td>$ 25</td>
-        </tr>
-        <tr>
-          <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-          <td><img src="../img/products/f3.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirts</td>
-          <td>$ 25</td>
-          <td><input type="number" value="1"></td>
-          <td>$ 25</td>
+          <td>Cartoon Astronaut T-Shirt</td>
+          <td>$25</td>
+          <td><input type="number" class="qty" value="1" min="1"></td>
+          <td class="subtotal">$25</td>
         </tr>
       </tbody>
     </table>
   </section>
+
   <section id="cart-add" class="section-p1">
     <div id="coupon">
       <h3>Apply Coupon</h3>
       <div>
-        <input type="text" placeholder="Enter Your Coupon"> <button class="normal">Apply</button>
+        <input type="text" placeholder="Enter Your Coupon">
+        <button class="normal">Apply</button>
       </div>
     </div>
     <div id="subtotal">
@@ -96,7 +87,7 @@
       <table>
         <tr>
           <td>Cart Subtotal</td>
-          <td>$ 75</td>
+          <td id="cart-subtotal">$0</td>
         </tr>
         <tr>
           <td>Shipping</td>
@@ -104,53 +95,104 @@
         </tr>
         <tr>
           <td><strong>Total</strong></td>
-          <td><strong>$ 75</strong></td>
+          <td id="cart-total"><strong>$0</strong></td>
         </tr>
       </table>
-      <button class="normal">Proceed to checkout</button>
+      <button class="normal" id="checkout-btn">Proceed to checkout</button>
     </div>
   </section>
-  <!-- -------------------------- -->
-
 
   <!-- ---------------FOOTER------------ -->
   <footer>
     <a href="#">TheStyleLoop</a>
-        <div class="social">
-                        <a href="https://www.facebook.com/profile.php?id=61583448988636" target="_blank" style="color: #3b5998; margin: 0 10px; font-size: 24px;">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-                        <a href="https://www.instagram.com/thestyleloop2025/" target="_blank" style="color: #E4405F; margin: 0 10px; font-size: 24px;">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-                        
-        </div>
-        <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
+    <div class="social">
+      <a href="https://www.facebook.com/profile.php?id=61583448988636" target="_blank" style="color: #3b5998; margin: 0 10px; font-size: 24px;">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/thestyleloop2025/" target="_blank" style="color: #E4405F; margin: 0 10px; font-size: 24px;">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+    <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
   </footer>
-  <!-- --------------------------------- -->
 
+  <!-- ------------JS for Cart Logic----------- -->
+  <script>
+    function updateTotals() {
+      const rows = document.querySelectorAll(".cart-item");
+      let subtotal = 0;
+
+      rows.forEach(row => {
+        const price = parseFloat(row.dataset.price);
+        const qty = parseInt(row.querySelector(".qty").value);
+        const sub = price * qty;
+        row.querySelector(".subtotal").textContent = `$${sub}`;
+        subtotal += sub;
+      });
+
+      document.getElementById("cart-subtotal").textContent = `$${subtotal}`;
+      document.getElementById("cart-total").innerHTML = `<strong>$${subtotal}</strong>`;
+    }
+
+    // Quantity change updates totals
+    document.addEventListener("input", e => {
+      if (e.target.classList.contains("qty")) updateTotals();
+    });
+
+    // Remove button functionality
+    document.addEventListener("click", e => {
+      if (e.target.closest(".remove-btn")) {
+        e.target.closest(".cart-item").remove();
+        updateTotals();
+      }
+    });
+
+    // Checkout button
+    document.getElementById("checkout-btn").addEventListener("click", () => {
+      window.location.href = "./checkout.html";
+    });
+
+    // Run once on load
+    updateTotals();
+  </script>
 
   <!-- ------JS For Hamburger Menu------ -->
-  <script lang="javascript">
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.querySelector(".menu-btn");
       const menu = document.querySelector(".menu");
-
       menuBtn.addEventListener("click", function () {
         menu.classList.toggle("active");
       });
     });
   </script>
-  <!-- --------------------------------- -->
-   <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JJJ4zPq6YD7VGCGBy0t9f";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+  <!-- AI Chat -->
+  <script>
+    (function () {
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) { window.chatbase.q = [] }
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") { return target.q }
+            return (...args) => target(prop, ...args)
+          }
+        })
+      }
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "JJJ4zPq6YD7VGCGBy0t9f";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if (document.readyState === "complete") { onLoad() }
+      else { window.addEventListener("load", onLoad) }
+    })();
+  </script>
+
 </body>
-
 </html>
-
-
-
-
-
-
