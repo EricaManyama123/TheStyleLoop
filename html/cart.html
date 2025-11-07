@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../img/logo (2).png" type="image/x-icon">
-  <title>TheStyleLoop | Where style meets Elegance</title>
+  <title>TheStyleLoop | Cart</title>
 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/navbarstyle.css">
   <link rel="stylesheet" href="../css/footer.css">
 </head>
-
 <body>
   <!-- ---------NAVBAR--------- -->
   <nav class="navbar">
-    <div class="logo">
-      <a href="../index.html">TheStyleLoop</a>
-    </div>
-    <div class="menu">
-      <div class="menu-links">
-        <a href="../index.html">Home</a>
-        <a href="./shop.html">Shop</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./blog.html">Blog</a>
-        <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
+      <div class="logo">
+          <a href="../index.html">TheStyleLoop</a>
       </div>
-      <form action="./login.html">
-        <button class="log-in">Log In</button>
-      </form>
-    </div>
-    <div class="menu-btn">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+      <div class="menu">
+          <div class="menu-links">
+              <a href="../index.html">Home</a>
+              <a href="./shop.html">Shop</a>
+              <a href="./about.html">About</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./blog.html">Blog</a>
+              <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
+          </div>
+          <form action="./login.html">
+              <button class="log-in">Log In</button>
+          </form>
+      </div>
+      <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+      </div>
   </nav>
 
-  <!-- -----------CART----------- -->
+  <!-- -----------Cart Section----------- -->
   <section id="cart" class="section-p1">
-    <table width="100%">
+    <table width="100%" id="cart-table">
       <thead>
         <tr>
           <td>Remove</td>
@@ -53,21 +50,21 @@
           <td>Subtotal</td>
         </tr>
       </thead>
-      <tbody id="cart-body">
-        <tr class="cart-item" data-price="139">
-          <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
+      <tbody>
+        <tr>
+          <td><a href="#" class="remove-item"><i class="far fa-times-circle"></i></a></td>
           <td><img src="../img/products/f1.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirt</td>
-          <td>$139</td>
-          <td><input type="number" class="qty" value="1" min="1"></td>
+          <td>Cartoon Astronaut T-Shirts</td>
+          <td class="price">139</td>
+          <td><input type="number" class="quantity" value="1" min="1"></td>
           <td class="subtotal">$139</td>
         </tr>
-        <tr class="cart-item" data-price="139">
-          <td><button class="remove-btn"><i class="far fa-times-circle"></i></button></td>
+        <tr>
+          <td><a href="#" class="remove-item"><i class="far fa-times-circle"></i></a></td>
           <td><img src="../img/products/f2.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirt</td>
-          <td>$139</td>
-          <td><input type="number" class="qty" value="1" min="1"></td>
+          <td>Cartoon Astronaut T-Shirts</td>
+          <td class="price">139</td>
+          <td><input type="number" class="quantity" value="1" min="1"></td>
           <td class="subtotal">$139</td>
         </tr>
       </tbody>
@@ -78,10 +75,11 @@
     <div id="coupon">
       <h3>Apply Coupon</h3>
       <div>
-        <input type="text" placeholder="Enter Your Coupon">
+        <input type="text" placeholder="Enter Your Coupon"> 
         <button class="normal">Apply</button>
       </div>
     </div>
+
     <div id="subtotal">
       <h3>Cart Totals</h3>
       <table>
@@ -98,7 +96,7 @@
           <td id="cart-total"><strong>$0</strong></td>
         </tr>
       </table>
-      <button class="normal" id="checkout-btn">Proceed to checkout</button>
+      <button class="normal" id="checkout-btn">Proceed to Checkout</button>
     </div>
   </section>
 
@@ -116,85 +114,44 @@
     <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
   </footer>
 
-  <!-- ------------JS for Cart Logic----------- -->
+  <!-- --------JS Script--------- -->
   <script>
-    function updateTotals() {
-      const rows = document.querySelectorAll(".cart-item");
+    function updateCartTotals() {
+      let rows = document.querySelectorAll("#cart-table tbody tr");
       let subtotal = 0;
 
       rows.forEach(row => {
-        const price = parseFloat(row.dataset.price);
-        const qty = parseInt(row.querySelector(".qty").value);
+        const price = parseFloat(row.querySelector(".price").textContent);
+        const qty = parseInt(row.querySelector(".quantity").value);
         const sub = price * qty;
-        row.querySelector(".subtotal").textContent = `$${sub}`;
+        row.querySelector(".subtotal").textContent = "$" + sub.toFixed(2);
         subtotal += sub;
       });
 
-      document.getElementById("cart-subtotal").textContent = `$${subtotal}`;
-      document.getElementById("cart-total").innerHTML = `<strong>$${subtotal}</strong>`;
+      document.getElementById("cart-subtotal").textContent = "$" + subtotal.toFixed(2);
+      document.getElementById("cart-total").textContent = "$" + subtotal.toFixed(2);
+      localStorage.setItem("cartTotal", subtotal.toFixed(2)); // Save total for checkout page
     }
 
-    // Quantity change updates totals
-    document.addEventListener("input", e => {
-      if (e.target.classList.contains("qty")) updateTotals();
-    });
-
-    // Remove button functionality
-    document.addEventListener("click", e => {
-      if (e.target.closest(".remove-btn")) {
-        e.target.closest(".cart-item").remove();
-        updateTotals();
+    document.addEventListener("input", function(e) {
+      if (e.target.classList.contains("quantity")) {
+        updateCartTotals();
       }
     });
 
-    // Checkout button
-    document.getElementById("checkout-btn").addEventListener("click", () => {
-      window.location.href = "./checkout.html";
-    });
-
-    // Run once on load
-    updateTotals();
-  </script>
-
-  <!-- ------JS For Hamburger Menu------ -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.querySelector(".menu-btn");
-      const menu = document.querySelector(".menu");
-      menuBtn.addEventListener("click", function () {
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
-
-  <!-- AI Chat -->
-  <script>
-    (function () {
-      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...arguments) => {
-          if (!window.chatbase.q) { window.chatbase.q = [] }
-          window.chatbase.q.push(arguments)
-        };
-        window.chatbase = new Proxy(window.chatbase, {
-          get(target, prop) {
-            if (prop === "q") { return target.q }
-            return (...args) => target(prop, ...args)
-          }
-        })
+    document.addEventListener("click", function(e) {
+      if (e.target.closest(".remove-item")) {
+        e.preventDefault();
+        e.target.closest("tr").remove();
+        updateCartTotals();
       }
-      const onLoad = function () {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "JJJ4zPq6YD7VGCGBy0t9f";
-        script.domain = "www.chatbase.co";
-        document.body.appendChild(script)
-      };
-      if (document.readyState === "complete") { onLoad() }
-      else { window.addEventListener("load", onLoad) }
-    })();
-  </script>
+    });
 
+    document.getElementById("checkout-btn").addEventListener("click", function() {
+      window.location.href = "checkout.html";
+    });
+
+    updateCartTotals();
+  </script>
 </body>
 </html>
-
-
