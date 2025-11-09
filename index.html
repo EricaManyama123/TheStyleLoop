@@ -459,39 +459,12 @@
     <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JJJ4zPq6YD7VGCGBy0t9f";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
-    addToCartButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        const product = this.closest(".product");
-
-        // Collect product data
-        const name = product.querySelector(".product-name").innerText;
-        const price = parseFloat(product.querySelector(".product-price").innerText.replace("$", "").trim());
-        const image = product.querySelector("img").src;
-
-        // Get existing cart or create new one
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Add product to cart
-        cart.push({ name, price, image });
-
-        // Save to local storage
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        // Optional: Alert and redirect
-        alert(`${name} has been added to your cart!`);
-        window.location.href = "./html/cart.html";
-      });
-    });
-  });
-</script>
+   
 
 </body>
 
 </html>
+
 
 
 
