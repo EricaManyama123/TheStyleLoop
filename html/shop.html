@@ -153,11 +153,84 @@
             });
         });
     </script>
-     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JJJ4zPq6YD7VGCGBy0t9f";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+     <!-- User Form -->
+<div id="user-info-form" style="padding:15px; background:#f7f7f7; width:300px;">
+    <h3>Enter Your Details</h3>
+
+    <input type="text" id="userName" placeholder="Your Name" style="width:100%; padding:10px; margin-top:10px;">
+    <input type="text" id="userMobile" placeholder="Mobile Number" style="width:100%; padding:10px; margin-top:10px;">
+    <input type="email" id="userEmail" placeholder="Email Address" style="width:100%; padding:10px; margin-top:10px;">
+
+    <button onclick="startChatbaseChat()" 
+        style="width:100%; padding:10px; margin-top:10px; background:#1e88e5; color:white; border:none; cursor:pointer;">
+        Start Chat
+    </button>
+</div>
+
+<script>
+function startChatbaseChat() {
+    const name = document.getElementById("userName").value.trim();
+    const mobile = document.getElementById("userMobile").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+
+    if (!name || !mobile || !email) {
+        alert("Please enter name, mobile, and email!");
+        return;
+    }
+
+    // Send user info to Chatbase as session attributes
+    window.chatbase("setUserAttributes", {
+        name: name,
+        mobile: mobile,
+        email: email
+    });
+
+    // Hide the form and open the chatbot
+    document.getElementById("user-info-form").style.display = "none";
+    window.chatbase("open");
+}
 </script>
+
+<!-- Chatbase Widget -->
+<script>
+(function () {
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+        };
+
+        window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+                if (prop === "q") {
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "JJJ4zPq6YD7VGCGBy0t9f";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+    };
+
+    if (document.readyState === "complete") {
+        onLoad();
+    } else {
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+
 </body>
 </html>
+
 
 
 
