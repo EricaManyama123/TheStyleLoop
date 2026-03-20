@@ -69,6 +69,82 @@
         .social-bar a:hover {
             transform: scale(1.15);
         }
+        /* ===== UI IMPROVEMENTS ===== */
+
+:root {
+    --primary: #111111;
+    --accent: #C8A97E;
+    --bg: #F8F6F2;
+}
+
+body {
+    background: var(--bg);
+}
+
+/* FEATURE BOX */
+.fe-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.fe-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* PRODUCT SECTION */
+.pro {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.pro:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGE HOVER */
+.pro img {
+    transition: 0.3s;
+}
+
+.pro:hover img {
+    transform: scale(1.1);
+}
+
+/* HEADINGS */
+#product1 h2, #product2 h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+/* BUTTON */
+button {
+    background: var(--accent);
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #a88d63;
+}
+
+/* SPACING */
+.section-p1 {
+    padding: 80px 100px;
+}
+
+/* SOCIAL HOVER */
+.social-bar a:hover {
+    background: #C8A97E;
+    color: white;
+}
     </style>
 </head>
 
@@ -294,7 +370,33 @@
 
 <!-- ================= NEW ARRIVALS ================= -->
 <section class="section-p1" id="product2"> <h2>New Arrivals</h2> <p>Summer Collection New Morden Design</p> <div class="pro-container"> <div class="pro"> <img src="img/products/n1.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>30 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="img/products/n2.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>30 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="./img/products/n3.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>55 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="./img/products/n4.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>50 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="./img/products/n5.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>45 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="./img/products/n6.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>40 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="./img/products/n7.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>30 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> <div class="pro"> <img src="img/products/n8.jpg" alt="" /> <div class="des"> <span>Adidas</span> <h5>Cartoon Astronaut T-Shirts</h5> <div class="star"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div> <h4>30 USD</h4> </div> <a href="#"><i class="fas fa-shopping-cart cart"></i></a> </div> </div> </section>
+<section class="section-p1" id="blog">
 
+<h2>Fashion Tips & Guides</h2>
+<p>Learn minimalist fashion and styling tips</p>
+
+<div class="pro-container">
+
+<div class="pro">
+    <h5>Why Neutral Clothing Looks Expensive</h5>
+    <p>Minimal fashion creates a premium look.</p>
+    <a href="./html/blog.html">Read More</a>
+</div>
+
+<div class="pro">
+    <h5>5 Minimalist Fashion Tips</h5>
+    <p>Upgrade your wardrobe easily.</p>
+    <a href="./html/blog.html">Read More</a>
+</div>
+
+<div class="pro">
+    <h5>Capsule Wardrobe Guide</h5>
+    <p>Build a stylish wardrobe with fewer clothes.</p>
+    <a href="./html/blog.html">Read More</a>
+</div>
+
+</div>
+</section>
     <!-- FOOTER -->
     <footer>
         <a href="#">TheStyleLoop</a>
