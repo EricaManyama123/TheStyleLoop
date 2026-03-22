@@ -1,197 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../img/logo (2).png" type="image/x-icon">
-  <title>TheStyleLoop | Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheStyleLoop | Cart</title>
 
- <!-- CORRECT FONT AWESOME (BRANDS SUPPORT) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbarstyle.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/navbarstyle.css">
-  <link rel="stylesheet" href="../css/footer.css">
-   <!-- FIXED SOCIAL MEDIA BAR CSS -->
-    <style>
-        .social-bar {
-            position: fixed;
-            top: 40%;
-            left: 0;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            padding: 10px;
-            z-index: 9999;
-        }
-
-        .social-bar a {
-            background: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #333;
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .social-bar a:hover {
-            transform: scale(1.15);
-        }
-    </style>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-  <!-- LEFT FIXED SOCIAL MEDIA -->
-    <div class="social-bar">
-        <a href="https://www.facebook.com/profile.php?id=61583448988636" target="_blank">
-            <i class="fa-brands fa-facebook" style="color:#4267B2;"></i>
-        </a>
-        <a href="https://www.instagram.com/thestyleloop2025/" target="_blank">
-            <i class="fa-brands fa-instagram" style="color:#E4405F;"></i>
-        </a>
-    </div>
-  <!-- ---------NAVBAR--------- -->
-  <nav class="navbar">
-      <div class="logo">
-          <a href="../index.html">TheStyleLoop</a>
-      </div>
-      <div class="menu">
-          <div class="menu-links">
-              <a href="../index.html">Home</a>
-              <a href="./shop.html">Shop</a>
-              <a href="./about.html">About</a>
-              <a href="./contact.html">Contact</a>
-              <a href="./blog.html">Blog</a>
-              <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
-          </div>
-          <form action="./login.html">
-              <button class="log-in">Log In</button>
-          </form>
-      </div>
-      <div class="menu-btn">
-          <i class="fa-solid fa-bars"></i>
-      </div>
-  </nav>
 
-  <!-- -----------Cart Section----------- -->
-  <section id="cart" class="section-p1">
-    <table width="100%" id="cart-table">
-      <thead>
-        <tr>
-          <td>Remove</td>
-          <td>Image</td>
-          <td>Product</td>
-          <td>Price</td>
-          <td>Quantity</td>
-          <td>Subtotal</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="#" class="remove-item"><i class="far fa-times-circle"></i></a></td>
-          <td><img src="../img/products/f1.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirts</td>
-          <td class="price">139</td>
-          <td><input type="number" class="quantity" value="1" min="1"></td>
-          <td class="subtotal">$139</td>
-        </tr>
-        <tr>
-          <td><a href="#" class="remove-item"><i class="far fa-times-circle"></i></a></td>
-          <td><img src="../img/products/f2.jpg" alt=""></td>
-          <td>Cartoon Astronaut T-Shirts</td>
-          <td class="price">139</td>
-          <td><input type="number" class="quantity" value="1" min="1"></td>
-          <td class="subtotal">$139</td>
-        </tr>
-      </tbody>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="../index.html">TheStyleLoop</a>
+    </div>
+
+    <div class="menu">
+        <div class="menu-links">
+            <a href="../index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+
+        <form action="./login.html">
+            <button class="log-in">Log In</button>
+        </form>
+    </div>
+</nav>
+
+<!-- CART SECTION -->
+<section class="section-p1">
+
+    <h2 style="text-align:center; margin-bottom:30px;">Your Cart</h2>
+
+    <table width="100%" border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody id="cartItems"></tbody>
     </table>
-  </section>
 
-  <section id="cart-add" class="section-p1">
-    <div id="coupon">
-      <h3>Apply Coupon</h3>
-      <div>
-        <input type="text" placeholder="Enter Your Coupon"> 
-        <button class="normal">Apply</button>
-      </div>
-    </div>
+    <h3 style="text-align:right; margin-top:20px;">
+        Total: $<span id="totalPrice">0</span>
+    </h3>
 
-    <div id="subtotal">
-      <h3>Cart Totals</h3>
-      <table>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="#">TheStyleLoop</a>
+    <p>© 2025 TheStyleLoop. All Rights Reserved</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartTable = document.getElementById("cartItems");
+let total = 0;
+
+function displayCart() {
+    cartTable.innerHTML = "";
+    total = 0;
+
+    cart.forEach((item, index) => {
+
+        let subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        cartTable.innerHTML += `
         <tr>
-          <td>Cart Subtotal</td>
-          <td id="cart-subtotal">$0</td>
+            <td><button onclick="removeItem(${index})">X</button></td>
+            <td><img src="${item.image}" width="70"></td>
+            <td>${item.name}</td>
+            <td>$${item.price}</td>
+            <td>
+                <input type="number" value="${item.quantity}" min="1"
+                onchange="updateQuantity(${index}, this.value)">
+            </td>
+            <td>$${subtotal}</td>
         </tr>
-        <tr>
-          <td>Shipping</td>
-          <td>Free</td>
-        </tr>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td id="cart-total"><strong>$0</strong></td>
-        </tr>
-      </table>
-      <button class="normal" id="checkout-btn">Proceed to Checkout</button>
-    </div>
-  </section>
-
-  <!-- ---------------FOOTER------------ -->
-  <footer>
-  
-    <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
-  </footer>
-
-  <!-- --------JS Script--------- -->
-  <script>
-    function updateCartTotals() {
-      let rows = document.querySelectorAll("#cart-table tbody tr");
-      let subtotal = 0;
-
-      rows.forEach(row => {
-        const price = parseFloat(row.querySelector(".price").textContent);
-        const qty = parseInt(row.querySelector(".quantity").value);
-        const sub = price * qty;
-        row.querySelector(".subtotal").textContent = "$" + sub.toFixed(2);
-        subtotal += sub;
-      });
-
-      document.getElementById("cart-subtotal").textContent = "$" + subtotal.toFixed(2);
-      document.getElementById("cart-total").textContent = "$" + subtotal.toFixed(2);
-      localStorage.setItem("cartTotal", subtotal.toFixed(2)); // Save total for checkout page
-    }
-
-    document.addEventListener("input", function(e) {
-      if (e.target.classList.contains("quantity")) {
-        updateCartTotals();
-      }
+        `;
     });
 
-    document.addEventListener("click", function(e) {
-      if (e.target.closest(".remove-item")) {
-        e.preventDefault();
-        e.target.closest("tr").remove();
-        updateCartTotals();
-      }
-    });
+    document.getElementById("totalPrice").innerText = total;
+}
 
-    document.getElementById("checkout-btn").addEventListener("click", function() {
-      window.location.href = "checkout.html";
-    });
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
 
-    updateCartTotals();
-  </script>
+function updateQuantity(index, qty) {
+    cart[index].quantity = parseInt(qty);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+// INITIAL LOAD
+displayCart();
+
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
