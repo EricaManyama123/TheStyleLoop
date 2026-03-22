@@ -145,7 +145,43 @@
 .pro:hover img {
     transform: scale(1.08);
 }
-      
+.hero button {
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    background: #b08968;
+    transform: scale(1.07);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #d4a373;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
     </style>
 </head>
 
@@ -365,7 +401,20 @@
 
     <!-- AI CHATBOT -->
     <script src="//code.tidio.co/1wat6rugvlahjaar79qcy6s2huk1x7za.js" async></script>
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
 
+document.querySelectorAll('.pro, h2, p').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+</script>
 </body>
 </html>
 
