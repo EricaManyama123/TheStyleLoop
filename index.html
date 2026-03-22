@@ -182,6 +182,19 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Push menu to right */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin-left: auto; /* 🔥 THIS LINE DOES THE MAGIC */
+}
 .header,
 #hero {
     padding-left:60px;
