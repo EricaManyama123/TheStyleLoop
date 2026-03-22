@@ -55,6 +55,81 @@
         .social-bar a:hover {
             transform: scale(1.15);
         }
+        /* HERO */
+.about-hero {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.about-hero p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* ABOUT SECTION */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.feature-box {
+    flex: 1;
+}
+
+.feature-box i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #088178;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 250px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background: #088178;
+    color: white;
+    border: none;
+}
     </style>
 
 
@@ -90,61 +165,64 @@
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
-    
-    <section id="about-head" class="section-p1">
-        <img src="../img/about/a6.jpg" alt="">
-        <div>
+    !-- HERO SECTION -->
+<section class="about-hero">
+    <h1>About TheStyleLoop</h1>
+    <p>Where Style Meets Elegance</p>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="about-section section-p1">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="../img/about/a1.jpg" alt="">
+        </div>
+        <div class="about-text">
             <h2>Who We Are</h2>
-            <p>Welcome to TheStyleLoop, your destination for modern and sustainable fashion. We believe that style shouldn't come at the expense of the planet or your wallet. Our mission is to provide high-quality, ethically-sourced clothing that makes you look and feel great. We meticulously select every piece to ensure it meets our standards for durability, comfort, and cutting-edge design. </p>
-            <abbr title="">Our commitment is to bring you fashion that blends timeless elegance with contemporary trends, ensuring you find the perfect outfit for any occasion. </abbr>
-            <br><br>
-            <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%"> Join the TheStyleLoop community and explore fashion that is conscious, comfortable, and chic.
-            </marquee>
-        </div>
-    </section>
-    <section id="about-app" class="section-p1">
-        <h1>Download Our <a href="https://www.instagram.com/thestyleloop2025/">App</a></h1>
-        <div class="video">
-            <video autoplay muted loop src="../img/about/1.mp4"></video>
-        </div>
-    </section>
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="../img/features/f1.png" alt="">
-            <h6>Free Shipping</h6>
-        </div>
-        <div class="fe-box">
-            <img src="../img/features/f2.png" alt="">
-            <h6>Online Order</h6>
-        </div>
-        <div class="fe-box">
-            <img src="../img/features/f3.png" alt="">
-            <h6>Save Money</h6>
-        </div>
-        <div class="fe-box">
-            <img src="../img/features/f4.png" alt="">
-            <h6>Promotions</h6>
-        </div>
-        <div class="fe-box">
-            <img src="../img/features/f5.png" alt="">
-            <h6>Happy Sell</h6>
-        </div>
-        <div class="fe-box">
-            <img src="../img/features/f6.png" alt="">
-            <h6>F24/7 Support</h6>
-        </div>
-    </section>
-    <section id="newsletter" class="section-p1 section-m1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>Get E-mail updates about our latest shop and <span>special offers</span>
+            <p>
+                Welcome to TheStyleLoop, your destination for modern and sustainable fashion.
+                We believe style should be effortless, elegant, and accessible.
+            </p>
+            <p>
+                Our mission is to deliver high-quality fashion that blends timeless design
+                with modern trends — helping you look confident every day.
             </p>
         </div>
-        <div class="form">
-            <input type="text" placeholder="Your email address">
-            <button class="normal">Sign Up</button>
-        </div>
-    </section>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features section-p1">
+    <div class="feature-box">
+        <i class="fas fa-truck"></i>
+        <h6>Free Shipping</h6>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-shopping-bag"></i>
+        <h6>Easy Orders</h6>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-tags"></i>
+        <h6>Best Prices</h6>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-headset"></i>
+        <h6>24/7 Support</h6>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h3>Join Our Community</h3>
+    <p>Get updates on new arrivals and special offers</p>
+    <div class="form">
+        <input type="text" placeholder="Your email address">
+        <button>Sign Up</button>
+    </div>
+</section>
+    
+    
+    
     <footer>
         <a href="#">TheStyleLoop</a>
         <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
