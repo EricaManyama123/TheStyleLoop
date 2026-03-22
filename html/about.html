@@ -130,12 +130,31 @@
     color: white;
     border: none;
 }
-#page-header {
-    background: linear-gradient(to right, #0f172a ,#1e293b);/* light clean background */
-    color: #white;
+
+.footer-box{
+            width:100%;
+            text-align:center;
+        }
+        .footer {
+     background: linear-gradient(to right, #111111, #1a1a1a);
+    color: #fff;
     text-align: center;
-    padding: 60px 20px;
+    padding: 30px 10px;
 }
+
+.footer h3 {
+    color: #d4a373;
+
+}
+
+.footer p {
+    color: #bbb;
+
+}
+.footer:hover{
+    transition:0.3s;
+}
+
     </style>
 
 
@@ -172,10 +191,7 @@
         </div>
     </nav>
 
-<section class="about-hero">
-    <h1>About TheStyleLoop</h1>
-    <p>Where Style Meets Elegance</p>
-</section>
+
 
 <!-- WHO WE ARE -->
 <section class="about-section section-p1">
@@ -226,10 +242,20 @@
     
     
     
-    <footer>
-        <a href="#">TheStyleLoop</a>
-        <p>©️ 2025 TheStyleLoop, Inc. All Rights Reserved</p>
-    </footer>
+   <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>TheStyleLoop</h3>
+            <p>Minimalist fashion and modern outfit trends.</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2025 TheStyleLoop | All Rights Reserved
+    </p>
     <script lang="javascript">
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.querySelector(".menu-btn");
