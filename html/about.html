@@ -55,80 +55,69 @@
         .social-bar a:hover {
             transform: scale(1.15);
         }
-        /* HERO */
-.about-hero {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
+       
 
-.about-hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.about-hero p {
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-/* ABOUT SECTION */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.about-text h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.about-text p {
-    color: #555;
-    line-height: 1.6;
-}
-
-/* FEATURES */
+/* Features section upgrade */
 .features {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
 }
 
 .feature-box {
-    flex: 1;
+    text-align: center;
 }
 
 .feature-box i {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 26px;
     color: #088178;
+    margin-bottom: 8px;
+}
+.feature-box i {
+    font-size: 30px;
+    color: #088178;
+    margin-bottom: 10px;
 }
 
-/* NEWSLETTER */
+.feature-box {
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Newsletter section upgrade */
 .newsletter {
-    text-align: center;
-    padding: 60px 20px;
     background: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.newsletter h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    color: #777;
+    margin-bottom: 20px;
 }
 
 .newsletter input {
-    padding: 10px;
-    width: 250px;
+    padding: 12px;
+    width: 280px;
+    border: 1px solid #ddd;
 }
 
 .newsletter button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     background: #088178;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .footer-box{
@@ -165,7 +154,9 @@
     max-width: 900px;
     margin: auto;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    background:#f9f9f9;
+    margin-top:-40px;
 }
 
 /* Better spacing for text */
@@ -173,55 +164,6 @@
     color: #555;
     line-height: 1.7;
     margin-bottom: 15px;
-}
-
-/* Features section upgrade */
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 40px;
-}
-
-.feature-box {
-    text-align: center;
-}
-
-.feature-box i {
-    font-size: 26px;
-    color: #088178;
-    margin-bottom: 8px;
-}
-
-/* Newsletter section upgrade */
-.newsletter {
-    background: #f9f9f9;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.newsletter h3 {
-    font-size: 26px;
-    margin-bottom: 10px;
-}
-
-.newsletter p {
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.newsletter input {
-    padding: 12px;
-    width: 280px;
-    border: 1px solid #ddd;
-}
-
-.newsletter button {
-    padding: 12px 20px;
-    background: #088178;
-    color: white;
-    border: none;
-    cursor: pointer;
 }
 
 .about-text{
@@ -239,7 +181,9 @@
 about-container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .about-image {
@@ -248,11 +192,14 @@ about-container {
 
 .about-image img {
     width: 100%;
-    border-radius: 12px;
+    height:300px;
+    object-fit:cover;
+    border-radius: 15px;
 }
 
 .about-text {
     flex: 1;
+    max-width:500px;
 }
 
 .about-text h2 {
@@ -263,35 +210,16 @@ about-container {
 .about-text p {
     color: #555;
     line-height: 1.7;
-    margin-bottom: 10px;
-}
-.features {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    text-align: center;
+    margin-bottom: 12px;
 }
 
-.feature-box i {
-    font-size: 30px;
-    color: #088178;
-    margin-bottom: 10px;
-}
-
-.feature-box {
-    transition: 0.3s;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-}
 about-hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/banner/b18.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/banner/b18.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
 
 .about-hero h1 {
