@@ -18,7 +18,7 @@
 
 /* HERO */
 .about-hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/banner/b18.jpg');
+    background:#0f172a
     background-size: cover;
     background-position: center;
     color: white;
@@ -146,23 +146,39 @@
 <body>
 
 <!-- NAVBAR -->
-<nav>
-    <h2>TheStyleLoop</h2>
-    <div>
-        <a href="../index.html">Home</a>
-        <a href="./shop.html">Shop</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./blog.html">Blog</a>
-    </div>
-</nav>
+ <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html">TheStyleLoop</a>
+            </div>
+        <div class="menu">
+            <div class="menu-links">
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./cart.html"><i class="fas fa-store-alt"></i></a>
+            </div>
+            <form action="./login.html">
+                <button class="log-in">Log In</button>
+            </form>
+        </div>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
 
 <!-- SOCIAL -->
-<div class="social-icons">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-</div>
-
+ <!-- LEFT FIXED SOCIAL MEDIA -->
+    <div class="social-bar">
+        <a href="https://www.facebook.com/profile.php?id=61583448988636" target="_blank">
+            <i class="fa-brands fa-facebook" style="color:#4267B2;"></i>
+        </a>
+        <a href="https://www.instagram.com/thestyleloop2025/" target="_blank">
+            <i class="fa-brands fa-instagram" style="color:#E4405F;"></i>
+        </a>
+    </div>
 <!-- HERO -->
 <section class="about-hero">
     <h1>About TheStyleLoop</h1>
@@ -218,18 +234,42 @@
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
-    <h2>Join Our Community</h2>
+    <h3>Join Our Community</h3>
     <p>Get updates on new arrivals and special offers</p>
-    <input type="email" placeholder="Your email address">
-    <button>Sign Up</button>
+    <div class="form">
+        <input type="text" placeholder="Your email address">
+        <button>Sign Up</button>
+    </div>
 </section>
+    
+    
+    
+   <footer class="footer">
 
-<!-- FOOTER -->
-<footer style="background:#000; color:white; text-align:center; padding:20px;">
-    <h3>TheStyleLoop</h3>
-    <p>Minimalist fashion and modern outfit trends.</p>
-    <p>© 2025 TheStyleLoop | All Rights Reserved</p>
-</footer>
+    <div class="footer-container">
 
-</body>
+        <div class="footer-box">
+            <h3>TheStyleLoop</h3>
+            <p>Minimalist fashion and modern outfit trends.</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2025 TheStyleLoop | All Rights Reserved
+    </p>
+    <script lang="javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.querySelector(".menu-btn");
+            const menu = document.querySelector(".menu");
+            menuBtn.addEventListener("click", function () {
+                menu.classList.toggle("active");
+            });
+        });
+    </script>
+     <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JJJ4zPq6YD7VGCGBy0t9f";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+    </body>
+
 </html>
